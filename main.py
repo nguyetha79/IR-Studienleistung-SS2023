@@ -132,7 +132,8 @@ if __name__ == '__main__':
     index_docs(docs_to_index)
 
     # Aufgabe 2
-    # search_vector("Which artists are the headliners at Apple Music Festival?")
+    res = search_vector("Which country launched its first space observatory into space?")
+    print(res)
 
     # Aufgabe 3
     # Aufgabe 3a
@@ -271,12 +272,12 @@ if __name__ == '__main__':
         search_vector(input_query="When did Edward Snowden write his first Twitter post?"))
     ground_truth_100_vector_1 = []
 
-    predictions_100_process = [predictions_100_vector_0, predictions_100_vector_1]
-    ground_truth_100_process = [ground_truth_100_vector_0, ground_truth_100_vector_1]
+    predictions_100_vector = [predictions_100_vector_0, predictions_100_vector_1]
+    ground_truth_100_vector = [ground_truth_100_vector_0, ground_truth_100_vector_1]
 
     evaluation(index_name="\nArticles 100 data vector ",
                num_eval_docs=2,
-               ground_truth_list=ground_truth_100_process,
-               predictions_list=predictions_100_process)
+               ground_truth_list=ground_truth_100_vector,
+               predictions_list=predictions_100_vector)
 
 
