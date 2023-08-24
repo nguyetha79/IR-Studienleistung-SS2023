@@ -1,1 +1,1 @@
-# IR-SL1-Indexieren-Suchen
+# IR-SL2-Vector-Search und Evaluation 
