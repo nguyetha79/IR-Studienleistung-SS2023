@@ -137,69 +137,69 @@ if __name__ == '__main__':
     # Aufgabe 3
     # Aufgabe 3a
 
-    predictions_standard_0 = get_relevant_docs_ids_list(search_index("Who bought National Geographic magazine?",
-                                                                     "articles_10000_data"))
+    predictions_standard_0 = get_relevant_docs_ids_list(search_index(input_query="Who bought National Geographic magazine?",
+                                                                     index_name="articles_10000_data"))
     ground_truth_standard_0 = []
 
-    predictions_standard_1 = get_relevant_docs_ids_list(search_index("What are people fleeing from in Syria?",
-                                                                     "articles_10000_data"))
+    predictions_standard_1 = get_relevant_docs_ids_list(search_index(input_query="What are people fleeing from in Syria?",
+                                                                     index_name="articles_10000_data"))
     ground_truth_standard_1 = []
 
-    predictions_standard_2 = get_relevant_docs_ids_list(search_index("How much does the iPad Pro cost?",
-                                                                     "articles_10000_data"))
+    predictions_standard_2 = get_relevant_docs_ids_list(search_index(input_query="How much does the iPad Pro cost?",
+                                                                     index_name="articles_10000_data"))
     ground_truth_standard_2 = []
 
-    predictions_standard_3 = get_relevant_docs_ids_list(search_index("What was discovered on Mars?",
-                                                                     "articles_10000_data"))
+    predictions_standard_3 = get_relevant_docs_ids_list(search_index(input_query="What was discovered on Mars?",
+                                                                     index_name="articles_10000_data"))
     ground_truth_standard_3 = []
 
-    predictions_standard_4 = get_relevant_docs_ids_list(search_index("How many people flee to Germany?",
-                                                                     "articles_10000_data"))
+    predictions_standard_4 = get_relevant_docs_ids_list(search_index(input_query="How many people flee to Germany?",
+                                                                     index_name="articles_10000_data"))
     ground_truth_standard_4 = []
 
     predictions_standard_5 = get_relevant_docs_ids_list(
-        search_index("Which artists are the headliners at Apple Music Festival?",
-                     "articles_10000_data"))
+        search_index(input_query="Which artists are the headliners at Apple Music Festival?",
+                     index_name="articles_10000_data"))
     ground_truth_standard_5 = []
 
     predictions_standard_6 = get_relevant_docs_ids_list(
-        search_index("When did Edward Snowden write his first Twitter post?",
-                     "articles_10000_data"))
+        search_index(input_query="When did Edward Snowden write his first Twitter post?",
+                     index_name="articles_10000_data"))
     ground_truth_standard_6 = []
 
     predictions_standard_7 = get_relevant_docs_ids_list(
-        search_index("Which country launched its first space observatory into space?",
-                     "articles_10000_data"))
+        search_index(input_query="Which country launched its first space observatory into space?",
+                     index_name="articles_10000_data"))
     ground_truth_standard_7 = []
 
-    predictions_standard_8 = get_relevant_docs_ids_list(search_index("What is Chancellor Merkl asking of Facebook?",
-                                                                     "articles_10000_data"))
+    predictions_standard_8 = get_relevant_docs_ids_list(search_index(input_query="What is Chancellor Merkl asking of Facebook?",
+                                                                     index_name="articles_10000_data"))
     ground_truth_standard_8 = []
 
-    predictions_standard_9 = get_relevant_docs_ids_list(search_index("Why went Facebook down?",
-                                                                     "articles_10000_data"))
+    predictions_standard_9 = get_relevant_docs_ids_list(search_index(input_query="Why went Facebook down?",
+                                                                     index_name="articles_10000_data"))
     ground_truth_standard_9 = []
 
     # Aufgabe 3b
 
-    predictions_process_0 = get_relevant_docs_ids_list(search_index("Who bought National Geographic magazine?",
-                                                                    "processed_10000_data"))
+    predictions_process_0 = get_relevant_docs_ids_list(search_index(input_query="Who bought National Geographic magazine?",
+                                                                    index_name="processed_10000_data"))
     ground_truth_process_0 = []
 
-    predictions_process_1 = get_relevant_docs_ids_list(search_index("What are people fleeing from in Syria?",
-                                                                    "processed_10000_data"))
+    predictions_process_1 = get_relevant_docs_ids_list(search_index(input_query="What are people fleeing from in Syria?",
+                                                                    index_name="processed_10000_data"))
     ground_truth_process_1 = []
 
-    predictions_process_2 = get_relevant_docs_ids_list(search_index("How much does the iPad Pro cost?",
-                                                                    "processed_10000_data"))
+    predictions_process_2 = get_relevant_docs_ids_list(search_index(input_query="How much does the iPad Pro cost?",
+                                                                    index_name="processed_10000_data"))
     ground_truth_process_2 = []
 
-    predictions_process_3 = get_relevant_docs_ids_list(search_index("What was discovered on Mars?",
-                                                                    "processed_10000_data"))
+    predictions_process_3 = get_relevant_docs_ids_list(search_index(input_query="What was discovered on Mars?",
+                                                                    index_name="processed_10000_data"))
     ground_truth_process_3 = []
 
-    predictions_process_4 = get_relevant_docs_ids_list(search_index("How many people flee to Germany?",
-                                                                    "processed_10000_data"))
+    predictions_process_4 = get_relevant_docs_ids_list(search_index(input_query="How many people flee to Germany?",
+                                                                    index_name="processed_10000_data"))
     ground_truth_process_4 = []
 
     # Evaluation
@@ -228,13 +228,13 @@ if __name__ == '__main__':
 
     # Aufgabe 3c
     predictions_100_standard_0 = get_relevant_docs_ids_list(
-        search_index("Which artists are the headliners at Apple Music Festival?",
-                     "articles_100_data"))
+        search_index(input_query="Which artists are the headliners at Apple Music Festival?",
+                     index_name="articles_100_data"))
     ground_truth_100_standard_0 = []
 
     predictions_100_standard_1 = get_relevant_docs_ids_list(
-        search_index("When did Edward Snowden write his first Twitter post?",
-                     "articles_100_data"))
+        search_index(input_query="When did Edward Snowden write his first Twitter post?",
+                     index_name="articles_100_data"))
     ground_truth_100_standard_1 = []
 
     predictions_100_standard = [predictions_100_standard_0, predictions_100_standard_1]
@@ -246,13 +246,13 @@ if __name__ == '__main__':
                predictions_list=predictions_100_standard)
 
     predictions_100_process_0 = get_relevant_docs_ids_list(
-        search_index("Which artists are the headliners at Apple Music Festival?",
-                     "processed_100_data"))
+        search_index(input_query="Which artists are the headliners at Apple Music Festival?",
+                     index_name="processed_100_data"))
     ground_truth_100_process_0 = []
 
     predictions_100_process_1 = get_relevant_docs_ids_list(
-        search_index("When did Edward Snowden write his first Twitter post?",
-                     "processed_100_data"))
+        search_index(input_query="When did Edward Snowden write his first Twitter post?",
+                     index_name="processed_100_data"))
     ground_truth_100_process_1 = []
 
     predictions_100_process = [predictions_100_process_0, predictions_100_process_1]
@@ -264,11 +264,11 @@ if __name__ == '__main__':
                predictions_list=predictions_100_process)
 
     predictions_100_vector_0 = get_relevant_docs_ids_list(
-        search_vector("Which artists are the headliners at Apple Music Festival?"))
+        search_vector(input_query="Which artists are the headliners at Apple Music Festival?"))
     ground_truth_100_vector_0 = []
 
     predictions_100_vector_1 = get_relevant_docs_ids_list(
-        search_vector("When did Edward Snowden write his first Twitter post?"))
+        search_vector(input_query="When did Edward Snowden write his first Twitter post?"))
     ground_truth_100_vector_1 = []
 
     predictions_100_process = [predictions_100_vector_0, predictions_100_vector_1]
