@@ -1,6 +1,7 @@
 # IR-SL1-Indexieren-Suchen
 
-Nguyet Ha Phung,  Mat-Nr: 2311056 \n
+Nguyet Ha Phung,  Mat-Nr: 2311056  
+
 Katharina Summerer, Mat-Nr: 1773964
 
 ### Die Dokumentation folgt hier: 
