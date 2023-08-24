@@ -58,10 +58,11 @@ def search_vector(input_query):
         "knn": {
             "field": "content_vector",
             "query_vector": input_embedding,
-            "k": 10,
+            "k": 50,
             "num_candidates": 100
         },
-        "fields": ["content"]
+        "fields": ["content"],
+        "size": 50
     }
     reponse = requests.request('GET', url=ELASTICSEARCH_URL + 'articles_vector_data/_search', json=query)
     return reponse.json()
@@ -132,7 +133,7 @@ if __name__ == '__main__':
     index_docs(docs_to_index)
 
     # Aufgabe 2
-    res = search_vector("Which country launched its first space observatory into space?")
+    res = search_vector("When did Edward Snowden write his first Twitter post?")
     print(res)
 
     # Aufgabe 3
@@ -266,7 +267,7 @@ if __name__ == '__main__':
 
     predictions_100_vector_0 = get_relevant_docs_ids_list(
         search_vector(input_query="Which artists are the headliners at Apple Music Festival?"))
-    ground_truth_100_vector_0 = []
+    ground_truth_100_vector_0 = ['06703828-aec2-4e5a-bb6f-8f7aa4fb9357']
 
     predictions_100_vector_1 = get_relevant_docs_ids_list(
         search_vector(input_query="When did Edward Snowden write his first Twitter post?"))
