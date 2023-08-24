@@ -1,5 +1,5 @@
 # IR-SL1-Indexieren-Suchen
----
+
 ### Die Dokumentation folgt hier: 
 
 #### 1. Eine Beschreibung (und Begründung) Ihrer angewandten Methodik für das Indexieren von Dokumenten, sowohl in Bezug auf Art des Preprocessings als auch technische Umsetzung.
