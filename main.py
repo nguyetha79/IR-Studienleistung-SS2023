@@ -141,15 +141,21 @@ if __name__ == '__main__':
 
     predictions_standard_0 = get_relevant_docs_ids_list(search_index(input_query="Who bought National Geographic magazine?",
                                                                      index_name="articles_10000_data"))
-    ground_truth_standard_0 = []
+    ground_truth_standard_0 = ["e1aebec4-52d5-4ce9-9783-24751c27706b"]
 
     predictions_standard_1 = get_relevant_docs_ids_list(search_index(input_query="What are people fleeing from in Syria?",
                                                                      index_name="articles_10000_data"))
-    ground_truth_standard_1 = []
+    ground_truth_standard_1 = ["8402fd9a-10a9-406b-8a6e-57d295388522", "4caf2601-4da7-4b13-8b79-ea57a6ef7e9b",
+                               "7d5db63e-efe3-4fd3-917c-7f9682b861c9", "cfccd4c7-0898-41cb-9f84-4d11267968fa",
+                               "b76fbe7d-c648-49ef-9fd4-6d7759194e11", "30d58186-6f13-423d-9616-de3c6be5e8b3",
+                               "eb7b1db2-53c6-4275-941a-35814e859c57", "780ece8a-7dde-44b6-b2bf-801c7d85b6da",
+                               "a1ce1914-3129-4e10-b466-405639d27dee", "c6083819-8fd7-4359-b355-2fc7d3204155",
+                               "402f6983-3300-4546-82c5-6f4eb08d0ba7"]
 
     predictions_standard_2 = get_relevant_docs_ids_list(search_index(input_query="How much does the iPad Pro cost?",
                                                                      index_name="articles_10000_data"))
-    ground_truth_standard_2 = []
+    ground_truth_standard_2 = ["f60ae2c2-9e98-404e-96ba-446bab8f16f5", "f9c85862-c318-49f8-8a83-c4cc8ca26c77",
+                               "350b2f99-ce3a-40f9-8592-31937f31636b", "c3492f85-dfe1-4eda-864a-f8bab3b4e7ff"]
 
     predictions_standard_3 = get_relevant_docs_ids_list(search_index(input_query="What was discovered on Mars?",
                                                                      index_name="articles_10000_data"))
