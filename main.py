@@ -70,9 +70,9 @@ def search_vector(input_query):
 
 # Aufgabe 3
 
-def evaluation(index_name, num_eval_docs, ground_truth_list, predictions_list):
+def evaluation(index_name, ground_truth_list, predictions_list):
     print("\n--------------------")
-    for x in range(num_eval_docs):
+    for x in range(len(ground_truth_list)):
         print(f'{index_name}{x}')
         print('Precision@5:', precision(ground_truth_list[x], predictions_list[x], k=5))
         print('Recall@5:', recall(ground_truth_list[x], predictions_list[x], k=5))
@@ -244,7 +244,6 @@ if __name__ == '__main__':
                              ground_truth_standard_3, ground_truth_standard_4]
 
     evaluation(index_name="\nArticles 10000 data standard ",
-               num_eval_docs=5,
                ground_truth_list=ground_truth_standard,
                predictions_list=predictions_standard)
 
@@ -255,7 +254,6 @@ if __name__ == '__main__':
                             ground_truth_process_3, ground_truth_process_4]
 
     evaluation(index_name="\nArticles 10000 data process ",
-               num_eval_docs=5,
                ground_truth_list=ground_truth_process,
                predictions_list=predictions_process)
 
@@ -274,7 +272,6 @@ if __name__ == '__main__':
     ground_truth_100_standard = [ground_truth_100_standard_0, ground_truth_100_standard_1]
 
     evaluation(index_name="\nArticles 100 data standard ",
-               num_eval_docs=2,
                ground_truth_list=ground_truth_100_standard,
                predictions_list=predictions_100_standard)
 
@@ -292,7 +289,6 @@ if __name__ == '__main__':
     ground_truth_100_process = [ground_truth_100_process_0, ground_truth_100_process_1]
 
     evaluation(index_name="\nArticles 100 data process ",
-               num_eval_docs=2,
                ground_truth_list=ground_truth_100_process,
                predictions_list=predictions_100_process)
 
@@ -310,7 +306,6 @@ if __name__ == '__main__':
     ground_truth_100_vector = [ground_truth_100_vector_0, ground_truth_100_vector_1]
 
     evaluation(index_name="\nArticles 100 data vector ",
-               num_eval_docs=2,
                ground_truth_list=ground_truth_100_vector,
                predictions_list=predictions_100_vector)
 
