@@ -1,6 +1,7 @@
 from sentence_transformers import SentenceTransformer
 import requests
 import ast
+import sys
 
 ELASTICSEARCH_URL = 'http://localhost:9200/'
 FILE_PATH = 'sample-1M.jsonl'
@@ -78,14 +79,14 @@ def search_vector(input_query):
 
 # Aufgabe 3
 
-def evaluation(index_name, ground_truth_list, predictions_list):
-    print("\n--------------------")
+def evaluation(index_name, ground_truth_list, predictions_list, file):
+    print("\n--------------------", file=file)
     for x in range(len(ground_truth_list)):
-        print(f'{index_name}{x}')
-        print('Precision@5:', precision(ground_truth_list[x], predictions_list[x], k=5))
-        print('Recall@5:', recall(ground_truth_list[x], predictions_list[x], k=5))
-        print('Precision@10:', precision(ground_truth_list[x], predictions_list[x], k=10))
-        print('Recall@10:', recall(ground_truth_list[x], predictions_list[x], k=10))
+        print(f'{index_name}{x}', file=file)
+        print('Precision@5:', precision(ground_truth_list[x], predictions_list[x], k=5), file=file)
+        print('Recall@5:', recall(ground_truth_list[x], predictions_list[x], k=5), file=file)
+        print('Precision@10:', precision(ground_truth_list[x], predictions_list[x], k=10), file=file)
+        print('Recall@10:', recall(ground_truth_list[x], predictions_list[x], k=10), file=file)
 
 
 def precision(true, pred, k=5):
@@ -120,29 +121,29 @@ def search_index(input_query, index_name):
 
 
 if __name__ == '__main__':
-    # Aufgabe 1
-    # Aufgabe 1a
-    create_index(index_name='articles_vector_data', mappings=mappings)
-
-    # Aufgabe 1b
-    with open(FILE_PATH, 'r') as json_file:
-        file_data = json_file.readlines()
-
-    file_data = [ast.literal_eval(line) for line in file_data]
-    text_list = [data['content'] for data in file_data]
-    vecs = create_vectors_from_text_list(text_list[:NUM_DOCS_TO_INDEX])
-
-    docs_to_index = []
-    for idx, doc in enumerate(vecs):
-        f_data = file_data[idx]
-        f_data['content_vector'] = vecs[idx]
-        docs_to_index.append(f_data)
-
-    index_docs(docs_to_index)
-
-    # Aufgabe 2
-    res = search_vector("When did Edward Snowden write his first Twitter post?")
-    print(res)
+    # # Aufgabe 1
+    # # Aufgabe 1a
+    # create_index(index_name='articles_vector_data', mappings=mappings)
+    #
+    # # Aufgabe 1b
+    # with open(FILE_PATH, 'r') as json_file:
+    #     file_data = json_file.readlines()
+    #
+    # file_data = [ast.literal_eval(line) for line in file_data]
+    # text_list = [data['content'] for data in file_data]
+    # vecs = create_vectors_from_text_list(text_list[:NUM_DOCS_TO_INDEX])
+    #
+    # docs_to_index = []
+    # for idx, doc in enumerate(vecs):
+    #     f_data = file_data[idx]
+    #     f_data['content_vector'] = vecs[idx]
+    #     docs_to_index.append(f_data)
+    #
+    # index_docs(docs_to_index)
+    #
+    # # Aufgabe 2
+    # res = search_vector("When did Edward Snowden write his first Twitter post?")
+    # print(res)
 
     # Aufgabe 3
     # Aufgabe 3a
@@ -253,9 +254,14 @@ if __name__ == '__main__':
     ground_truth_standard = [ground_truth_standard_0, ground_truth_standard_1, ground_truth_standard_2,
                              ground_truth_standard_3, ground_truth_standard_4]
 
-    evaluation(index_name="\nArticles 10000 data standard ",
-               ground_truth_list=ground_truth_standard,
-               predictions_list=predictions_standard)
+    # Title: Directing print output to a .txt file
+    # Retrieved from: https://stackoverflow.com/questions/36571560/directing-print-output-to-a-txt-file
+
+    with open("results.txt", "a") as f:
+        evaluation(index_name="\nArticles 10000 data standard ",
+                   ground_truth_list=ground_truth_standard,
+                   predictions_list=predictions_standard,
+                   file=f)
 
     predictions_process = [predictions_process_0, predictions_process_1, predictions_process_2,
                            predictions_process_3, predictions_process_4]
@@ -263,9 +269,11 @@ if __name__ == '__main__':
     ground_truth_process = [ground_truth_process_0, ground_truth_process_1, ground_truth_process_2,
                             ground_truth_process_3, ground_truth_process_4]
 
-    evaluation(index_name="\nArticles 10000 data process ",
-               ground_truth_list=ground_truth_process,
-               predictions_list=predictions_process)
+    with open("results.txt", "a") as f:
+        evaluation(index_name="\nArticles 10000 data process ",
+                   ground_truth_list=ground_truth_process,
+                   predictions_list=predictions_process,
+                   file=f)
 
     # Aufgabe 3c
     predictions_100_standard_0 = get_docIds_list_from_response(
@@ -281,9 +289,11 @@ if __name__ == '__main__':
     predictions_100_standard = [predictions_100_standard_0, predictions_100_standard_1]
     ground_truth_100_standard = [ground_truth_100_standard_0, ground_truth_100_standard_1]
 
-    evaluation(index_name="\nArticles 100 data standard ",
-               ground_truth_list=ground_truth_100_standard,
-               predictions_list=predictions_100_standard)
+    with open("results.txt", "a") as f:
+        evaluation(index_name="\nArticles 100 data standard ",
+                   ground_truth_list=ground_truth_100_standard,
+                   predictions_list=predictions_100_standard,
+                   file=f)
 
     predictions_100_process_0 = get_docIds_list_from_response(
         search_index(input_query="How much does the iPad Pro cost?",
@@ -298,9 +308,11 @@ if __name__ == '__main__':
     predictions_100_process = [predictions_100_process_0, predictions_100_process_1]
     ground_truth_100_process = [ground_truth_100_process_0, ground_truth_100_process_1]
 
-    evaluation(index_name="\nArticles 100 data process ",
-               ground_truth_list=ground_truth_100_process,
-               predictions_list=predictions_100_process)
+    with open("results.txt", "a") as f:
+        evaluation(index_name="\nArticles 100 data process ",
+                   ground_truth_list=ground_truth_100_process,
+                   predictions_list=predictions_100_process,
+                   file=f)
 
     # print(search_vector(input_query="How much does the iPad Pro cost?"))
     predictions_100_vector_0 = get_docIds_list_from_response(
@@ -315,8 +327,10 @@ if __name__ == '__main__':
     predictions_100_vector = [predictions_100_vector_0, predictions_100_vector_1]
     ground_truth_100_vector = [ground_truth_100_vector_0, ground_truth_100_vector_1]
 
-    evaluation(index_name="\nArticles 100 data vector ",
-               ground_truth_list=ground_truth_100_vector,
-               predictions_list=predictions_100_vector)
+    with open("results.txt", "a") as f:
+        evaluation(index_name="\nArticles 100 data vector ",
+                   ground_truth_list=ground_truth_100_vector,
+                   predictions_list=predictions_100_vector,
+                   file=f)
 
 

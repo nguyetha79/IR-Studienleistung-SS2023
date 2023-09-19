@@ -1,0 +1,106 @@
+
+--------------------
+
+Articles 10000 data standard 0
+Precision@5: 0.4
+Recall@5: 0.3333333333333333
+Precision@10: 0.4
+Recall@10: 0.6666666666666666
+
+Articles 10000 data standard 1
+Precision@5: 0.2
+Recall@5: 0.09090909090909091
+Precision@10: 0.2
+Recall@10: 0.18181818181818182
+
+Articles 10000 data standard 2
+Precision@5: 0.4
+Recall@5: 0.3333333333333333
+Precision@10: 0.4
+Recall@10: 0.6666666666666666
+
+Articles 10000 data standard 3
+Precision@5: 0.2
+Recall@5: 0.3333333333333333
+Precision@10: 0.1
+Recall@10: 0.3333333333333333
+
+Articles 10000 data standard 4
+Precision@5: 0.4
+Recall@5: 1.0
+Precision@10: 0.2
+Recall@10: 1.0
+
+--------------------
+
+Articles 10000 data process 0
+Precision@5: 0.4
+Recall@5: 0.4
+Precision@10: 0.4
+Recall@10: 0.8
+
+Articles 10000 data process 1
+Precision@5: 0.2
+Recall@5: 0.1
+Precision@10: 0.2
+Recall@10: 0.2
+
+Articles 10000 data process 2
+Precision@5: 0.4
+Recall@5: 0.3333333333333333
+Precision@10: 0.4
+Recall@10: 0.6666666666666666
+
+Articles 10000 data process 3
+Precision@5: 0.2
+Recall@5: 0.3333333333333333
+Precision@10: 0.1
+Recall@10: 0.3333333333333333
+
+Articles 10000 data process 4
+Precision@5: 0.4
+Recall@5: 1.0
+Precision@10: 0.2
+Recall@10: 1.0
+
+--------------------
+
+Articles 100 data standard 0
+Precision@5: 0.2
+Recall@5: 1.0
+Precision@10: 0.1
+Recall@10: 1.0
+
+Articles 100 data standard 1
+Precision@5: 0.0
+Recall@5: 0.0
+Precision@10: 0.1
+Recall@10: 1.0
+
+--------------------
+
+Articles 100 data process 0
+Precision@5: 0.2
+Recall@5: 1.0
+Precision@10: 0.1
+Recall@10: 1.0
+
+Articles 100 data process 1
+Precision@5: 0.0
+Recall@5: 0.0
+Precision@10: 0.1
+Recall@10: 1.0
+
+--------------------
+
+Articles 100 data vector 0
+Precision@5: 0.2
+Recall@5: 1.0
+Precision@10: 0.1
+Recall@10: 1.0
+
+Articles 100 data vector 1
+Precision@5: 0.2
+Recall@5: 1.0
+Precision@10: 0.1
+Recall@10: 1.0
