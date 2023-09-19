@@ -38,6 +38,7 @@ def create_vectors_from_text_list(text_list):
     vector_list = []
     for text in text_list:
         vector_list.append((embedder.encode(text.lower(), convert_to_tensor=True)).tolist())
+        # vector_list.append((embedder.encode(text.lower(), convert_to_tensor=True)[0]).tolist())
     return vector_list
 
 
@@ -53,6 +54,7 @@ def index_docs(document_dicts):
 # Aufgabe 2
 def search_vector(input_query):
     input_embedding = (embedder.encode(input_query.lower(), convert_to_tensor=True)).tolist()
+    # input_embedding = (embedder.encode(input_query.lower(), convert_to_tensor=True)[0]).tolist()
 
     query = {
         "knn": {
@@ -209,16 +211,18 @@ if __name__ == '__main__':
                               "3d7ca512-e7c7-4ea2-97ea-3d4885f7583f", "49a6740c-8143-41df-b90f-63d6ddcc4804",
                               "a92c78dd-48fe-4752-9a70-dba27e606288"]
 
-    predictions_process_1 = get_docIds_list_from_response(search_index(input_query="What are people fleeing from in Syria?",
-                                                                       index_name="processed_10000_data"))
+    predictions_process_1 = get_docIds_list_from_response(
+        search_index(input_query="What are people fleeing from in Syria?",
+                     index_name="processed_10000_data"))
     ground_truth_process_1 = ["8402fd9a-10a9-406b-8a6e-57d295388522", "4caf2601-4da7-4b13-8b79-ea57a6ef7e9b",
                               "7d5db63e-efe3-4fd3-917c-7f9682b861c9", "cfccd4c7-0898-41cb-9f84-4d11267968fa",
                               "b76fbe7d-c648-49ef-9fd4-6d7759194e11", "30d58186-6f13-423d-9616-de3c6be5e8b3",
                               "eb7b1db2-53c6-4275-941a-35814e859c57", "780ece8a-7dde-44b6-b2bf-801c7d85b6da",
                               "a1ce1914-3129-4e10-b466-405639d27dee", "c6083819-8fd7-4359-b355-2fc7d3204155"]
 
-    predictions_process_2 = get_docIds_list_from_response(search_index(input_query="What was discovered on Mars?",
-                                                                       index_name="processed_10000_data"))
+    predictions_process_2 = get_docIds_list_from_response(
+        search_index(input_query="What was discovered on Mars?",
+                     index_name="processed_10000_data"))
     ground_truth_process_2 = ["1eba3050-1cd2-4184-be76-bbe6f0b8f024", "5a07213b-7e81-4e0c-9dfa-758ae4c1ae3c",
                               "13ebe973-e727-47d5-8fe7-a27e05c2d578", "33ede757-4c7e-44ad-86be-c7401061af32",
                               "26a92e12-f6da-45be-afc9-4f13f699196c", "f0e7b753-2351-497a-a861-75ca339432c8"]
