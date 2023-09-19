@@ -51,6 +51,12 @@ def index_docs(document_dicts):
         print(response.json())
 
 
+# Title: k-nearest neighbor (kNN) search
+# Retrieved from: https://www.elastic.co/guide/en/elasticsearch/reference/current/knn-search.html#knn-search
+
+# Title: Not able to get more than 10 results in ANN search using ES 8.5.0 docker image
+# Retrieved from: https://discuss.elastic.co/t/not-able-to-get-more-than-10-results-in-ann-search-using-es-8-5-0-docker-image/318429
+
 # Aufgabe 2
 def search_vector(input_query):
     input_embedding = (embedder.encode(input_query.lower(), convert_to_tensor=True)).tolist()
