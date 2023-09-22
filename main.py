@@ -121,29 +121,29 @@ def search_index(input_query, index_name):
 
 
 if __name__ == '__main__':
-    # # Aufgabe 1
-    # # Aufgabe 1a
-    # create_index(index_name='articles_vector_data', mappings=mappings)
-    #
-    # # Aufgabe 1b
-    # with open(FILE_PATH, 'r') as json_file:
-    #     file_data = json_file.readlines()
-    #
-    # file_data = [ast.literal_eval(line) for line in file_data]
-    # text_list = [data['content'] for data in file_data]
-    # vecs = create_vectors_from_text_list(text_list[:NUM_DOCS_TO_INDEX])
-    #
-    # docs_to_index = []
-    # for idx, doc in enumerate(vecs):
-    #     f_data = file_data[idx]
-    #     f_data['content_vector'] = vecs[idx]
-    #     docs_to_index.append(f_data)
-    #
-    # index_docs(docs_to_index)
-    #
-    # # Aufgabe 2
-    # res = search_vector("When did Edward Snowden write his first Twitter post?")
-    # print(res)
+    # Aufgabe 1
+    # Aufgabe 1a
+    create_index(index_name='articles_vector_data', mappings=mappings)
+
+    # Aufgabe 1b
+    with open(FILE_PATH, 'r') as json_file:
+        file_data = json_file.readlines()
+
+    file_data = [ast.literal_eval(line) for line in file_data]
+    text_list = [data['content'] for data in file_data]
+    vecs = create_vectors_from_text_list(text_list[:NUM_DOCS_TO_INDEX])
+
+    docs_to_index = []
+    for idx, doc in enumerate(vecs):
+        f_data = file_data[idx]
+        f_data['content_vector'] = vecs[idx]
+        docs_to_index.append(f_data)
+
+    index_docs(docs_to_index)
+
+    # Aufgabe 2
+    res = search_vector("When did Edward Snowden write his first Twitter post?")
+    print(res)
 
     # Aufgabe 3
     # Aufgabe 3a
