@@ -198,7 +198,8 @@ if __name__ == '__main__':
     predictions_standard_7 = get_docIds_list_from_response(
         search_index(input_query="When did Edward Snowden write his first Twitter post?",
                      index_name="articles_10000_data"))
-    ground_truth_standard_7 = []
+    ground_truth_standard_7 = ["2996930f-9def-4ea9-a268-e3e9ea156fb1", "2996930f-9def-4ea9-a268-e3e9ea156fb1",
+                               "8c7844a9-5130-45ba-9a22-3fc6e33a4bcf"]
 
     predictions_standard_8 = get_docIds_list_from_response(
         search_index(input_query="Who bought National Geographic magazine?",
@@ -207,7 +208,9 @@ if __name__ == '__main__':
 
     predictions_standard_9 = get_docIds_list_from_response(search_index(input_query="Why went Facebook down?",
                                                                         index_name="articles_10000_data"))
-    ground_truth_standard_9 = []
+    ground_truth_standard_9 = ["aa3d8502-7cb7-4fe0-ad40-4426d068deea", "d2539c9b-6061-4ed5-b0bb-4ca6fc395774",
+                               "93de28e8-8a49-4719-9838-caff41b74ee9", "0ab6b0d2-e910-4168-b47f-b2a40a8b4055",
+                               ]
 
     # Aufgabe 3b
 
@@ -216,7 +219,7 @@ if __name__ == '__main__':
                      index_name="processed_10000_data"))
     ground_truth_process_0 = ["c5e25672-812b-43a0-b558-9cf89f4f1c3d", "0d25ebac-299e-47d2-a76b-03e3cb069222",
                               "3d7ca512-e7c7-4ea2-97ea-3d4885f7583f", "49a6740c-8143-41df-b90f-63d6ddcc4804",
-                              "a92c78dd-48fe-4752-9a70-dba27e606288"]
+                              "a92c78dd-48fe-4752-9a70-dba27e606288", "268916dc-ae49-47c1-a189-45ef3c431398"]
 
     predictions_process_1 = get_docIds_list_from_response(
         search_index(input_query="What are people fleeing from in Syria?",
